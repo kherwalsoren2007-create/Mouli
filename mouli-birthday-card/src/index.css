@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #f8e1f4 0%, #f9f6e7 100%);
+  color: #7c6eaa;
+  transition: background 1s;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
