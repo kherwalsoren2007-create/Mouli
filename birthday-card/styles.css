@@ -1,0 +1,172 @@
+:root {
+  --rose: #ffd1dc;
+  --lilac: #e6d5ff;
+  --peach: #ffd9b3;
+  --mint: #d9fff5;
+  --sky: #d7eaff;
+  --ink: #2a2a2a;
+  --text: #3d3a3a;
+  --white-glass: rgba(255, 255, 255, 0.6);
+  --white-glass-strong: rgba(255, 255, 255, 0.75);
+  --shadow: rgba(60, 40, 90, 0.18);
+  --accent: #a277ff;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(120deg, var(--rose), var(--lilac), var(--peach), var(--mint), var(--sky));
+  background-size: 300% 300%;
+  animation: gradientFlow 18s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.app { min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+.topbar, .bottombar { display: flex; align-items: center; justify-content: center; padding: 12px 16px; }
+.topbar { color: #664a9b; font-weight: 600; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
+
+.pages { display: grid; place-items: center; padding: 24px; position: relative; }
+
+.page {
+  width: min(920px, 92vw);
+  min-height: min(72vh, 680px);
+  border-radius: 28px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 60px var(--shadow);
+  background: var(--white-glass);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.45);
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 600ms ease, transform 600ms ease, filter 600ms ease;
+  filter: blur(4px) saturate(110%);
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0) saturate(120%);
+  position: relative;
+}
+
+.content.center { text-align: center; padding: 24px; }
+
+h1.script {
+  font-family: 'Dancing Script', 'Playfair Display', serif;
+  font-size: clamp(40px, 7vw, 86px);
+  color: #6b4ab3;
+  margin: 6px 0 12px 0;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+}
+
+.subtitle { font-size: clamp(16px, 2.5vw, 22px); color: #5a4d6f; }
+
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 44px); color: #4b3b7a; margin: 8px 0 18px; }
+
+p { line-height: 1.75; font-size: 18px; }
+
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: var(--white-glass-strong);
+  box-shadow: 0 8px 18px rgba(80, 60, 120, 0.15);
+  color: #4b3b7a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(80,60,120,0.18); }
+.btn:active { transform: translateY(0); }
+.btn.primary { background: linear-gradient(135deg, #fbeaff, #e2d6ff); color: #5a3ea6; }
+.btn.secondary { background: linear-gradient(135deg, #e9f7ff, #e8fff7); color: #2f6d6a; }
+
+.cta-row { margin-top: 22px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+.bottombar { gap: 12px; }
+.nav-btn { width: 44px; height: 44px; border-radius: 50%; font-size: 28px; line-height: 1; background: var(--white-glass-strong); }
+
+.dots { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.dots .dot {
+  width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.75);
+  box-shadow: inset 0 0 0 1px rgba(80,60,120,0.2), 0 4px 10px rgba(80,60,120,0.1);
+  transition: transform 200ms ease, background-color 200ms ease;
+  cursor: pointer;
+}
+.dots .dot.active { background: var(--accent); transform: scale(1.2); }
+
+/* Letter page */
+.letter { max-width: 720px; margin: 0 auto; }
+.letter .signoff { margin-top: 24px; font-style: italic; color: #604e87; }
+
+/* Gallery */
+.gallery .grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 900px) { .gallery .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .gallery .grid { grid-template-columns: repeat(2, 1fr); } }
+
+.photo {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 8px 20px rgba(60, 50, 100, 0.12);
+  display: grid; place-items: center;
+}
+.photo.placeholder { border: 2px dashed rgba(90,60,140,0.25); color: #6e5a9b; font-weight: 600; }
+.photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.photo span { opacity: 0.7; font-size: 14px; }
+
+/* Poem */
+.poem .poem-text { font-size: 20px; color: #5a4b86; line-height: 1.9; white-space: normal; }
+
+/* List page */
+.list .love-list { max-width: 720px; margin: 8px auto 0; padding-left: 22px; }
+.list .love-list li { margin: 8px 0; padding-left: 4px; }
+
+/* Final page */
+.final .controls { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.muted { color: #6d5f87; opacity: 0.9; font-size: 14px; }
+
+/* Small floating hearts background for a dreamy touch */
+.page-1::before, .page-6::before {
+  content: "";
+  position: absolute; inset: -20px;
+  background-image: radial-gradient(ellipse at top left, rgba(255,255,255,0.28) 0 40%, transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(255,255,255,0.22) 0 40%, transparent 60%);
+  filter: blur(20px);
+  pointer-events: none; z-index: 0;
+}
+
+/* Accessibility */
+:focus-visible { outline: 3px solid rgba(120, 80, 200, 0.6); outline-offset: 3px; border-radius: 12px; }

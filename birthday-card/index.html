@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A dreamy birthday surprise for Mouli" />
+  <title>Happy Birthday Mouli ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="title">A little birthday surprise</div>
+    </header>
+
+    <main id="pages" class="pages">
+      <!-- Page 1: Welcome -->
+      <section class="page page-1 active" data-title="Welcome">
+        <div class="content center">
+          <h1 class="script">Happy Birthday Mouli !</h1>
+          <p class="subtitle">Today the world feels a little more magical because of you.</p>
+          <div class="cta-row">
+            <button class="btn primary" id="enterBtn">Open the surprise</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page 2: Letter -->
+      <section class="page page-2" data-title="A letter for you">
+        <div class="content letter">
+          <h2>Dear Mouli,</h2>
+          <p>
+            On this day, I’m grateful the universe decided to place your light in the world. 
+            Somehow you make ordinary moments feel rare and extraordinary—like soft sunsets that linger a little longer just for us.
+          </p>
+          <p>
+            I love the way your smile shows up before your laughter does, and how your kindness fills every quiet space.
+            With you, the small things feel like constellations: shared glances, silly jokes, and the comfort of knowing I can be myself.
+          </p>
+          <p>
+            If I could wrap a wish around your heart, I’d ask it to keep you safe, joyful, and wildly loved—today and always. 
+            You deserve every good thing, every warm breeze, every bright morning, every gentle night.
+          </p>
+          <p class="signoff">Always rooting for you,<br/>[Your Name]</p>
+        </div>
+      </section>
+
+      <!-- Page 3: Gallery -->
+      <section class="page page-3" data-title="Our little gallery">
+        <div class="content gallery">
+          <h2>Memories in soft focus</h2>
+          <p class="muted">Add your photos later by placing them in <code>assets/photos</code> and updating the items below.</p>
+          <div class="grid" id="galleryGrid">
+            <div class="photo placeholder"><span>Add photo 1</span></div>
+            <div class="photo placeholder"><span>Add photo 2</span></div>
+            <div class="photo placeholder"><span>Add photo 3</span></div>
+            <div class="photo placeholder"><span>Add photo 4</span></div>
+            <div class="photo placeholder"><span>Add photo 5</span></div>
+            <div class="photo placeholder"><span>Add photo 6</span></div>
+            <div class="photo placeholder"><span>Add photo 7</span></div>
+            <div class="photo placeholder"><span>Add photo 8</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Page 4: Surprise Poem -->
+      <section class="page page-4" data-title="A tiny secret">
+        <div class="content poem">
+          <h2>For your eyes only</h2>
+          <p class="poem-text">
+            In the hush between heartbeats, I found you—<br/>
+            a spark that turned into moonlight, then morning.<br/>
+            If magic had a favorite place to live,<br/>
+            it would be in your laugh, your eyes, your name.<br/>
+            Happy birthday, my quiet wish come true.
+          </p>
+        </div>
+      </section>
+
+      <!-- Page 5: 10 Things I Love About You -->
+      <section class="page page-5" data-title="10 things I love about you">
+        <div class="content list">
+          <h2>10 things I love about you</h2>
+          <ol class="love-list">
+            <li>Your smile that feels like sunrise.</li>
+            <li>The way you listen—gently, fully, honestly.</li>
+            <li>Your kindness, even when no one’s watching.</li>
+            <li>Your curious mind and the way it lights up ideas.</li>
+            <li>Your soft confidence—it’s calm and captivating.</li>
+            <li>The playful chaos you bring to the ordinary.</li>
+            <li>Your laugh, my favorite soundtrack.</li>
+            <li>Your patience, especially with yourself.</li>
+            <li>How you make everyone around you feel seen.</li>
+            <li>The way you turn moments into memories.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Page 6: Thank You + Music -->
+      <section class="page page-6" data-title="Thank you">
+        <div class="content final">
+          <h2>Thank you for being you</h2>
+          <p>
+            Thank you for your light, your warmth, your beautifully human heart. 
+            Being around you feels like breathing in a new sky. I’m cheering for your dreams—today and always.
+          </p>
+          <div class="controls">
+            <button class="btn" id="playMusicBtn">Play a soft melody</button>
+            <button class="btn secondary" id="replayBtn">Replay from the start</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottombar">
+      <button class="btn nav-btn" id="prevBtn" aria-label="Previous">‹</button>
+      <div class="dots" id="dots" aria-label="Page navigation"></div>
+      <button class="btn nav-btn" id="nextBtn" aria-label="Next">›</button>
+    </footer>
+  </div>
+
+  <audio id="bg-music" preload="auto" src="assets/soft-melody.mp3"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
