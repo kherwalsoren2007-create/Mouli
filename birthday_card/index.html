@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Mouli</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <main id="pages">
+    <!-- Page 1: Welcome -->
+    <section class="page" id="page1">
+      <h1 class="title">Happy Birthday <span class="name">Mouli</span>!</h1>
+      <p class="subtitle">May your day be as magical as you are ✨</p>
+      <button id="startBtn" class="primary-btn">Begin the surprise ➜</button>
+    </section>
+
+    <!-- Page 2: Letter -->
+    <section class="page" id="page2">
+      <h2 class="heading">A Letter From My Heart</h2>
+      <p class="letter">
+        Dear Mouli,<br><br>
+        On this special day, my world paints itself in pastel hues of joy, simply because you exist. Your smile lights up the ordinary and turns every second into a memory worth treasuring. Today, I wish for every dream you whisper to the stars to gently find its way back to you. Thank you for being the soft heartbeat in my chaotic symphony. Happy Birthday, my muse. 💖
+      </p>
+    </section>
+
+    <!-- Page 3: Photo Gallery -->
+    <section class="page" id="page3">
+      <h2 class="heading">Moments We Cherish</h2>
+      <div class="gallery">
+        <!-- Replace src with your own photos -->
+        <img src="https://via.placeholder.com/200" alt="Memory 1"/>
+        <img src="https://via.placeholder.com/200" alt="Memory 2"/>
+        <img src="https://via.placeholder.com/200" alt="Memory 3"/>
+        <img src="https://via.placeholder.com/200" alt="Memory 4"/>
+      </div>
+    </section>
+
+    <!-- Page 4: Surprise Poem -->
+    <section class="page" id="page4">
+      <h2 class="heading">A Little Secret Just For You</h2>
+      <p class="poem">
+        Roses fade, but you stay bright,<br>
+        Moonbeams linger in your light.<br>
+        Wishes flutter on soft night air,<br>
+        Because of you, life feels rare. 🌙
+      </p>
+    </section>
+
+    <!-- Page 5: 10 Things I Love About You -->
+    <section class="page" id="page5">
+      <h2 class="heading">10 Things I Absolutely Adore About You</h2>
+      <ol class="love-list">
+        <li>Your laughter—it’s contagious.</li>
+        <li>The gentle kindness in your eyes.</li>
+        <li>Your unstoppable curiosity.</li>
+        <li>The way you turn chaos into art.</li>
+        <li>Your passion for the little things.</li>
+        <li>That adorable crinkle when you smile.</li>
+        <li>The warmth you bring to every room.</li>
+        <li>Your fierce loyalty and grace.</li>
+        <li>Your voice, my favorite melody.</li>
+        <li>Your heart—pure, brave, and beautiful.</li>
+      </ol>
+    </section>
+
+    <!-- Page 6: Thank You + Music -->
+    <section class="page" id="page6">
+      <h2 class="heading">Thank You For Existing</h2>
+      <p class="thankyou">You make this world infinitely brighter. Thank you for letting me be a part of your journey. Happy Birthday, Mouli! 🎉</p>
+      <!-- Background music (replace src with your own track) -->
+      <audio id="bg-music" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" preload="auto"></audio>
+      <div class="music-controls">
+        <button id="playMusic" class="primary-btn">Play Music ▷</button>
+        <button id="pauseMusic" class="secondary-btn">Pause ◼</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <button id="prevBtn" class="secondary-btn">⟵ Back</button>
+    <div class="dots"></div>
+    <button id="nextBtn" class="secondary-btn">Next ⟶</button>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
