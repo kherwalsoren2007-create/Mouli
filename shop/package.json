@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "npm run tokens:build",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev --name init",
+    "db:seed": "prisma db seed",
+    "tokens:build": "style-dictionary build"
   },
   "dependencies": {
     "@prisma/client": "^6.13.0",
@@ -31,6 +36,7 @@
     "prisma": "^6.13.0",
     "style-dictionary": "^5.0.1",
     "tailwindcss": "^4",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }
