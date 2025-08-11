@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.tokens.studio/token.schema.json",
+  "imports": [],
+  "tokens": {
+    "color": {
+      "background": { "value": "#ffffff", "type": "color" },
+      "foreground": { "value": "#171717", "type": "color" },
+      "primary": { "value": "#111827", "type": "color" }
+    },
+    "font": {
+      "size": {
+        "base": { "value": "16px", "type": "fontSizes" }
+      }
+    },
+    "radius": {
+      "md": { "value": "8px", "type": "borderRadius" }
+    }
+  }
+}

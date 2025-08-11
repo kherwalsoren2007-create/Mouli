@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/style-dictionary",
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "tokens-studio",
+      "buildPath": "src/styles/",
+      "files": [
+        {
+          "destination": "tokens.css",
+          "format": "css/variables",
+          "options": { "selector": ":root" }
+        }
+      ]
+    }
+  }
+}
